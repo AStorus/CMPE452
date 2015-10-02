@@ -11,12 +11,14 @@ public class Neuron {
 	
 	
 	public Neuron(double neuronVal, double bias, String type){
+		//Input neurons (x1, x2) have no input neurons themselves,
+		//So they must be given a value (neuronVal) for their coordinates
 		if(type.equals("Input")) {
 			this.neuronVal = neuronVal;
 			this.isFired = true;
 			this.outputWeight = 0;
 		}
-		else {//If not an input type neuron
+		else {//If not an input type neuron (Middle Layer or beyond)
 			this.neuronVal = 1;
 			this.bias = bias;
 			this.inputNeurons = new ArrayList<Neuron>();
@@ -75,6 +77,7 @@ public class Neuron {
 				sum += n.getOutputWeight() * n.getNeuronVal() ; 
 			}
 		}
+		//Assuming if the point is on the boundary then it is considered within
 		if(sum >= this.bias) {
 			this.isFired = true;
 		}
