@@ -1,0 +1,48 @@
+**Graphical Representation of Neural Net**
+
+|Input Layer|        |Hidden Layers                                                  | | Output       |
+
+x1-- weight = -1 -- \
+					  A(theta = -4) -- weight = 1 --  |
+x2-- weight =  0 -- /								  |
+													  |
+x1-- weight =   1 -- \								  |
+					  B(theta = -8) -- weight = 1 --  |
+x2-- weight =  -2 -- /								  |
+													  | -- rightSide(theta = 3.5)-  weight = 1 -\
+x1-- weight =  -1 -- \								  |											|
+					  C(theta = 11) -- weight = 1 --  |											|
+x2-- weight =   3 -- /								  |											|
+													  |											|
+x1-- weight =   0 -- \								  |											|
+					  D(theta =  4) -- weight = 1 --  |											|
+x2-- weight =   1 -- /                                |											|
+																								output(theta = 0.5)
+x1-- weight = -1 -- \																			|
+					  A(theta = -4) -- weight = 1 --  |											|
+x2-- weight =  0 -- /								  |											|
+													  |											|
+x1-- weight =   1 -- \								  |											|
+					  E(theta =  8) -- weight = 1 --  |											|
+x2-- weight =   2 -- /								  |											|
+													  | -- leftSide (theta = 3.5)-  weight = 1 -/
+x1-- weight =   1 -- \								  |
+					  F(theta = 13) -- weight = 1 --  |
+x2-- weight =   2 -- /                                |
+													  |
+x1-- weight =   1 -- \								  |
+					  G(theta =  4) -- weight = 1 --  |
+x2-- weight =   0 -- /                                |
+
+
+Each line on the diagram provided by the instructor for the assignment is represented by a neuron
+
+If the point lies within the bounds of the line, that neuron then fires
+For example, neuron A represents the line y = 4, so if any point has a lower y value than 4, that neuron fires (ie 3 would fire, 5 would not)
+Those neurons in the first layer then feed into the second Hidden Layer
+I treat this problem as if it were 2 shapes, so the left side and right side neurons detect if the point is within those 2 'shapes'
+
+the leftside and rightside neurons are then fed into the output neuron, which determines whether or not the point is within those 
+two shapes through use of a logical OR gate
+
+
