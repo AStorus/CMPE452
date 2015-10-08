@@ -1,4 +1,6 @@
 **Graphical Representation of Neural Net**
+Open with notepad++
+
 
 |Input Layer|        |Hidden Layers                                                  | | Output       |
 
