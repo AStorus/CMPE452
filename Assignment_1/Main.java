@@ -71,7 +71,7 @@ public class Main {
 		//Node F eqn => w1 = 1, w2 = 2, theta = 13
 		Neuron F = new Neuron(0, 13, "Hidden Layer");
 		x1.setOutputWeight(1);
-		x2.setOutputWeight(3);
+		x2.setOutputWeight(2);
 		F.addInputNeuron(x1, x2);
 		
 		//System.out.println("F " + F.getIsFired());
