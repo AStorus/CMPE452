@@ -1,0 +1,34 @@
+Student ID: 13als2
+Student Number: 10103737
+Name: Andrew Storus
+
+This program uses two methods, error correction and simple feedback, to each train two perceptrons, for a total of four perceptrons in the file.
+
+each method essentially takes the logical AND of the two perceptrons it trains to determine if a point is in the 0 class region.
+
+Again, each method trains two perceptrons. One perceptron ignores the class 1 points and only adjusts its weights to divide the class 0 and -1 points, 
+While the other ignores the class -1 points and divides the class 0 and 1 points. 
+
+
+The initial weights for each are randomly generated at the start of the program, each weight being between 0 and 1, Printed to the console. WEights are stored in an array of length 3
+weights[0] holds the x coordinate weight, weights[1] holds the y coordinate weight, and weights [2] holds the offset.
+
+Both perceptrons for the Simple Feedback Method function similarly. Simple Feedback loops over all the data points in the training range(read from the excel file)
+Either perceptron ignores either class 1 or -1 data points. It then goes through the training range. If it calculates the output to match the given output from the excel file,
+it moves on to the next one. Otherwise, while the output does not match the excel expected output or we have reached an arbitrary max number of iterations, adjust the weights
+according to the Error Correction formula ( w = w + learningRate * x ). Once that is done for the data points in the training range, return the weights.
+
+Error Correction similarly  loops over the training set and ignores either class 1 or -1 points. The difference is that it calculates the local error for that point, and loops until 
+that local error is 0 (localError = d - y), or we reach a max number of iterations. It uses the Error Correction formula to readjust the weights
+w = w + (d-y)*learningRate*x;
+
+The learning rate was chosen to be a constant 0.005
+The excel data is run through 1000 times to train the network
+
+Simple Feedback training took an average of 600 miliseconds.
+Error Correction training took an average of 150 miliseconds.
+
+Each method classifies all points correctly >95% of the time.
+
+If the player is impantient and restless, a high learning rate and smaller training epoch size is appropriate
+If the player is very focused and attentive, a low learning rate and higher training epoch size is appropriate
